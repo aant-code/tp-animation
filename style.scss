@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -42,7 +43,6 @@ body {
     }
 }
 .button {
-    display: block;
     margin: 20px auto;
     padding: 10px 20px;
     font-size: 16px;
