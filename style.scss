@@ -58,6 +58,18 @@ body {
     text-align: center;
     animation: text-animation 4s infinite;
 }
+.p :hover {
+    color: red;
+    animation: rotate 2s linear 1;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 @keyframes text-animation {
     0% {
         font-size: 100%;
