@@ -55,16 +55,17 @@ body {
 }
 
 p {
-  font-family: "Bitcount Ink", sans-serif;
+  font-family: Arial, sans-serif;
+  color: blue;
   font-size: 76px;
   font-weight: bold;
   text-align: center;
-  animation: text-animation 4s infinite;
+  animation: text-animation 2s infinite;
 }
 
-p :hover {
+p:hover {
   color: red;
-  animation: rotate 2s linear 1;
+  animation: rotate 1s linear 1;
 }
 
 @keyframes rotate {
@@ -81,6 +82,7 @@ p :hover {
   }
   50% {
     font-size: 200%;
+    color: red;
   }
   100% {
     font-size: 100%;
