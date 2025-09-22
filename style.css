@@ -13,6 +13,10 @@ body {
   border-right: 5px solid blue;
   border-radius: 50%;
   animation: spin 2s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 @keyframes spin {
@@ -26,6 +30,7 @@ body {
 .select {
   width: 100px;
   height: 100px;
+  position: absolute;
 }
 .select a {
   display: flex;
