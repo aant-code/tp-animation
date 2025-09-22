@@ -54,7 +54,7 @@ body {
   border-radius: 5px;
 }
 
-.p {
+p {
   font-family: "Bitcount Ink", sans-serif;
   font-size: 76px;
   font-weight: bold;
@@ -62,7 +62,7 @@ body {
   animation: text-animation 4s infinite;
 }
 
-.p :hover {
+p :hover {
   color: red;
   animation: rotate 2s linear 1;
 }
