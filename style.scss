@@ -51,13 +51,6 @@ body {
     background-color: blue;
     border-radius: 5px;
 }
-.text {
-    font-family: 'Bitcount Ink', sans-serif;
-    font-size: 48px;
-    font-weight: bold;
-    text-align: center;
-    animation: text-animation 2s infinite;
-}
 @keyframes text-animation {
     0% {
         font-size: 100%;
@@ -68,3 +61,11 @@ body {
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
 }
+.text {
+    font-family: 'Bitcount Ink', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    animation: text-animation 2s infinite;
+}
+
