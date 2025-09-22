@@ -54,6 +54,14 @@ body {
   border-radius: 5px;
 }
 
+.text {
+  font-family: "Bitcount Ink", sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  animation: text-animation 4s infinite;
+}
+
 @keyframes text-animation {
   0% {
     font-size: 100%;
@@ -64,11 +72,4 @@ body {
   100% {
     font-size: 100%;
   }
-}
-.text {
-  font-family: "Bitcount Ink", sans-serif;
-  font-size: 48px;
-  font-weight: bold;
-  text-align: center;
-  animation: text-animation 2s infinite;
 }/*# sourceMappingURL=style.css.map */
