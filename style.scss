@@ -41,4 +41,13 @@ body {
         text-decoration: none;
     }
 }
-
+.button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: blue;
+    border-radius: 5px;
+}
