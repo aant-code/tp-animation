@@ -28,7 +28,9 @@ body {
   height: 100px;
 }
 .select a {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   background-image: url("https://www.pngall.com/wp-content/uploads/14/Loading-PNG-Image-File.png");
