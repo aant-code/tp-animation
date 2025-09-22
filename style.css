@@ -57,11 +57,12 @@ body {
 @keyframes text-animation {
   0% {
     font-size: 100%;
-    text-shadow: none;
+  }
+  50% {
+    font-size: 200%;
   }
   100% {
-    font-size: 200%;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 100%;
   }
 }
 .text {
