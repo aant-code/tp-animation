@@ -1,3 +1,7 @@
+// ============================================
+// STYLES DE BASE
+// ============================================
+
 body {
     display: flex;
     flex-direction: column;
@@ -6,6 +10,22 @@ body {
     height: 100vh;
     background-color: white;
 }
+
+.button {
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: blue;
+    border-radius: 5px;
+}
+
+
+// ============================================
+// LOADER (Boite carrée qui tourne)
+// ============================================
+
 .square-box {
     width: 50px;
     height: 50px;
@@ -19,18 +39,16 @@ body {
     position: relative;
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+
+// ============================================
+// SPINNER (Image qui tourne)
+// ============================================
+
 .select {
     width: 100px;
     height: 100px;
     position: absolute;
+    
     a {
         display: flex;
         justify-content: center;
@@ -42,27 +60,84 @@ body {
         text-decoration: none;
     }
 }
-.button {
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    text-decoration: none;
-    color: white;
-    background-color: blue;
-    border-radius: 5px;
+
+
+// ============================================
+// TEXTE ANIMÉ (qui fait boum boum)
+// ============================================
+
+.text {
+    p {
+        font-family: Arial, sans-serif;
+        color: blue;
+        font-size: 76px;
+        font-weight: bold;
+        text-align: center;
+        animation: text-animation 2s infinite;
+    }
+    
+    p:hover {
+        color: red;
+        animation: rotate 1s linear 1;
+    }
 }
-p {
-    font-family: Arial, sans-serif;
-    color: blue;
-    font-size: 76px;
-    font-weight: bold;
-    text-align: center;
-    animation: text-animation 2s infinite;
+
+
+// ============================================
+// CŒUR ANIMÉ (qui se transforme en T)
+// ============================================
+
+.heart {
+    width: 100px;
+    height: 90px;
+    position: relative;
+    animation: zoom-move 5s infinite;
+    
+    // Parties communes du cœur
+    .heart_left, 
+    .heart_right {
+        width: 50px;
+        height: 80px;
+        background-color: red;
+        position: absolute;
+        top: 0;
+        border-radius: 50px 50px 0 0;
+        animation: color-change 3s infinite;
+    }
+    
+    // Partie gauche du cœur (devient la barre verticale du T)
+    .heart_left {
+        left: 42px;
+        top: 0;
+        transform: rotate(45deg);
+        animation: color-change 3s infinite, heart-left-to-T 6s infinite;
+    }
+    
+    // Partie droite du cœur (devient la barre horizontale du T)
+    .heart_right {
+        left: 20px;
+        top: 0;
+        transform: rotate(-45deg);
+        animation: color-change 3s infinite, heart-right-to-T 6s infinite;
+    }
 }
-p:hover {
-    color: red;
-    animation: rotate 1s linear 1;
+
+
+// ============================================
+// ANIMATIONS
+// ============================================
+
+// Animation de rotation simple (360°)
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
+
+// Animation de rotation (pour le texte au hover)
 @keyframes rotate {
     0% {
         transform: rotate(0deg);
@@ -71,6 +146,8 @@ p:hover {
         transform: rotate(360deg);
     }
 }
+
+// Animation du texte (grossit et change de couleur)
 @keyframes text-animation {
     0% {
         font-size: 100%;
@@ -83,5 +160,95 @@ p:hover {
         font-size: 100%;
     }
 }
+
+// Animation de changement de couleur (bleu -> rouge -> bleu)
+@keyframes color-change {
+    0% {
+        background-color: blue;
+    }
+    50% {
+        background-color: red;
+    }
+    100% {
+        background-color: blue;
+    }
+}
+
+// Animation du cœur (zoom, monte, va à droite, revient)
+@keyframes zoom-move {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+    25% {
+        transform: scale(2) translateY(0);
+    }
+    50% {
+        transform: scale(1) translateY(-100px);
+    }
+    75% {
+        transform: scale(1) translateY(-100px) translateX(100px);
+    }
+    100% {
+        transform: scale(1) translateY(0) translateX(0);
+    }
+}
+
+// Animation partie gauche : Cœur -> T (barre verticale)
+@keyframes heart-left-to-T {
+    0%, 40% {
+        transform: rotate(45deg);
+        left: 42px;
+        top: 0;
+        width: 50px;
+        height: 80px;
+        border-radius: 50px 50px 0 0;
+    }
+    50%, 90% {
+        transform: rotate(0deg);
+        left: 35px;
+        top: 20px;
+        width: 30px;
+        height: 100px;
+        border-radius: 0;
+    }
+    100% {
+        transform: rotate(45deg);
+        left: 42px;
+        top: 0;
+        width: 50px;
+        height: 80px;
+        border-radius: 50px 50px 0 0;
+    }
+}
+
+// Animation partie droite : Cœur -> T (barre horizontale)
+@keyframes heart-right-to-T {
+    0%, 40% {
+        transform: rotate(-45deg);
+        left: 20px;
+        top: 0;
+        width: 50px;
+        height: 80px;
+        border-radius: 50px 50px 0 0;
+    }
+    50%, 90% {
+        transform: rotate(0deg);
+        left: 0px;
+        top: 20px;
+        width: 100px;
+        height: 20px;
+        border-radius: 0;
+    }
+    100% {
+        transform: rotate(-45deg);
+        left: 20px;
+        top: 0;
+        width: 50px;
+        height: 80px;
+        border-radius: 50px 50px 0 0;
+    }
+}
+
+
 
 
